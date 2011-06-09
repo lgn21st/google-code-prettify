@@ -1318,6 +1318,16 @@ var REGEXP_PRECEDER_PATTERN = '(?:^^\\.?|[+-]|\\!|\\!=|\\!==|\\#|\\%|\\%=|&|&&|&
     }
   }
 
+  function prettyPrintNode(sourceNode, opt_langExtension, opt_numberLines) {
+    var job = {
+      langExtension: opt_langExtension,
+      numberLines: opt_numberLines,
+      sourceNode: sourceNode
+    };
+    applyDecorator(job);
+  }
+  window['prettyPrintNode'] = prettyPrintNode;
+
   /**
    * @param sourceCodeHtml {string} The HTML to pretty print.
    * @param opt_langExtension {string} The language name to use.
